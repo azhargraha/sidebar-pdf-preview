@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .placeholder-text {
+        @apply text-sm leading-6 text-[#424242] relative;
+    }
+
+    .placeholder-list {
+        position: relative;
+        padding-left: calc(20px + 16px); /* icon width + padding gap */
+    }
+
+    .placeholder-list::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 3px;
+        height: 20px;
+        width: 20px;
+        background-image: url("/check-circle.svg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* override react-pdf-viewer styling */
+.rpv-core__page-layer {
+    --rpv-core__page-layer-box-shadow: 0 0 0 4px #f3f4f6 !important;
+}
+
+.rpv-core__inner-pages {
+    @apply py-10 !bg-[#F5F5F5];
+}
+
+.rpv-core__inner-page {
+    @apply !bg-[#F5F5F5];
+}
