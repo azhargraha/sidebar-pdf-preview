@@ -5,7 +5,7 @@ const useListenMessage = () => {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (event.data.source === 'nuxt-host') {
+      if (event.data.source === 'SIDEBAR-DRAFTING-HOST') {
         setFile(event.data.data.file);
       }
     };
